@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/png" href="https://www.freepnglogos.com/uploads/spotify-logo-png/image-gallery-spotify-logo-21.png">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <title>Spotify - Web Player</title>
+    </head>
+    <body>
+        <aside>
+            <div class="contenitore-aside">
+                <div class="logo-area">
+                    <img class="logo_img-big" src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png" alt="spotify-icon">
+                    <img class="logo_img-small" src="https://www.iconsdb.com/icons/preview/white/spotify-xxl.png" alt="spotify-icon">
+                </div>
+                <div class="aside-menu">
+                    <nav>
+                        <ul>
+                            <li class="voce_aside-menu">
+                                <div class="green-hover"></div>
+                                <div class="icon_aside-menu">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="text_aside-menu">
+                                    <p>Cerca</p>
+                                </div>
+                            </li>
+                            <li class="voce_aside-menu active">
+                                <div class="green-hover-active"></div>
+                                <div class="icon_aside-menu">
+                                    <i class="fas fa-stream"></i>
+                                </div>
+                                <div class="text_aside-menu">
+                                    <p>Home</p>
+                                </div>
+                            </li>
+                            <li class="voce_aside-menu">
+                                <div class="green-hover"></div>
+                                <div class="icon_aside-menu">
+                                    <i class="fas fa-podcast"></i>
+                                </div>
+                                <div class="text_aside-menu">
+                                    <p>La tua libreria</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="aside-playlist">
+                    <p class="aside-playlist-title">Playlist</p>
+                    <p><i class="fas fa-plus-square playlist-create"></i>&nbsp;Crea playlist</p>
+                    <section>
+                        <p>Musica indie</p>
+                        <p>Mix Jovanotti</p>
+                        <p>Anni '60</p>
+                        <p>Guccini</p>
+                        <p>Bertoli</p>
+                        <p>Relax</p>
+                    </section>
+                </div>
+            </div>
+            <div class="account-connesso">
+                <p class="install"><i class="far fa-arrow-alt-circle-down"></i>&nbsp;Install app</p>
+                <hr>
+                <p class="user"><i class="far fa-user"></i>&nbsp;m.anghileri</p>
+            </div>
+        </aside>
+        <main>
+            <section class="top-menu">
+                <ul>
+                    <li>
+                        <p id="active-p">In evidenza</p>
+                        <div class="green-bottom-active"></div>
+                    </li>
+                    <li>
+                        <p>Podcast</p>
+                        <div class="green-bottom"></div>
+                    </li>
+                    <li>
+                        <p>Classifiche</p>
+                        <div class="green-bottom"></div>
+                    </li>
+                    <li>
+                        <p>Generi e mood</p>
+                        <div class="green-bottom"></div>
+                    </li>
+                    <li>
+                        <p>Nuove uscite</p>
+                        <div class="green-bottom"></div>
+                    </li>
+                    <li>
+                        <p>Scopri</p>
+                        <div class="green-bottom"></div>
+                    </li>
+                </ul>
+            </section>
+            <section class="music-area">
+                <div class="container-music first-container">
+                    <h3>Scegli il tuo genere...</h3>
+                    <!-- Select per selezione classi -->
+                    <select name="genre">
+                      <option value="All">All</option>
+                      <option value="Rock">Rock</option>
+                      <option value="Pop">Pop</option>
+                      <option value="Jazz">Jazz</option>
+                      <option value="Metal">Metal</option>
+                    </select>
+                    <section class="music-section">
+                        <!-- template Handlebars -->
+                        <script id="entry-template" type="text/x-handlebars-template">
+                            <div class="card-music {{genre}}">
+                                <div class="card-img">
+                                    <i class="fas fa-play"></i>
+                                    <img src="{{poster}}" alt="">
+                                </div>
+                                <div class="card-text">
+                                    <h4>{{title}}</h4>
+                                    <p class="author">{{author}}</p>
+                                    <p class="year">{{year}}</p>
+                                </div>
+                            </div>
+                        </script>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <section class="player">
+            <div class="area-in-ascolto">
+                <div class="img-in-ascolto">
+                    <img src="https://i.scdn.co/image/ae737384aacb8cfd90621bb60dae2a651cc90421" alt="ridere">
+                </div>
+                <div class="titolo-in-ascolto">
+                    <h6>Ridere</h6>
+                    <p>Pinguini Tattici Nucleari</p>
+                </div>
+                <div class="cuore-in-ascolto">
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
+            <div class="area-player-bar">
+                <div class="tasti-player-bar">
+                    <i class="fas fa-random active-player">
+                        <i class="fas fa-circle active-indicator"></i>
+                    </i>
+                    <i class="fas fa-step-backward"></i>
+                    <i class="far fa-pause-circle special-i"></i>
+                    <i class="fas fa-step-forward"></i>
+                    <i class="fas fa-redo"></i>
+                </div>
+                <div class="caricamento-player-bar">
+                    <p>1:17</p>
+                    <div class="barra-car-player-bar">
+                        <div class="barra-attiva-car-player-bar"></div>
+                        <div class="pallina-avanzamento"></div>
+                    </div>
+                    <p>3:33</p>
+                </div>
+            </div>
+            <div class="area-volume">
+                <i class="fas fa-th-list"></i>
+                <i class="fas fa-tv"></i>
+                <i class="fas fa-volume-up"></i>
+                <div class="linea-volume">
+                    <div class="linea-volume-attiva"></div>
+                    <div class="pallina-volume"></div>
+                </div>
+            </div>
+        </section>
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
